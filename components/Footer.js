@@ -21,13 +21,13 @@ const Footer = () => {
             </div>
 
             <div className="col-md-6 mb-md-0 mb-3">
-              <h5 className="text-uppercase font-weight-bold">Smashing Stores</h5>
+              <h5 className="text-uppercase font-weight-bold">JAMstack Cart</h5>
               <p>Built with 💕 by <a href="https://twitter.com/beveloper">beveloper</a></p>
             </div>
             </div>
           </div>
           <div className="footer-copyright text-center py-3">© 2020 Copyright:
-            <span> Smashing Stores</span>
+            <span> JAMstack Cart</span>
           </div>
         </footer>
     );
