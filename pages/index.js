@@ -2,7 +2,7 @@ import Products from '../components/Products.js'
 import fetch from 'isomorphic-unfetch'
 const Index = (props) => (
   <div>
-    <Products products={props.products} />
+    <Products products={products} />
   </div>
   
 )
@@ -16,10 +16,9 @@ Index.getInitialProps = async function () {
     }
   })
   const data = await res.json()
-  const Adata = data.items
-  // console.log('data--', Adata)
+  const productData = data.items
    return {
-    products: Adata
+     products: productData
   };
 };
 export default Index
