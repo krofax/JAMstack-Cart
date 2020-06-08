@@ -1,13 +1,25 @@
 import Products from '../components/Products.js'
 import fetch from 'isomorphic-unfetch'
-import Layout from '../components/Layout'
 const Index = (props) => (
   <div>
     <Products products={props.products} />
-    <Layout />
   </div>
   
 )
 
-// Fetch our products data via the API endpoint
+Index.getInitialProps = async function () {
+  const url = "https://8dbbc77b-api.agilitycms.cloud/fetch/en-us/list/productlist";
+  const key = "defaultlive.c9cdfc30fbfa87f64dc637b174f66a59d2db17d241fa4213751e7b08cd3c7fb7"
+  const res = await fetch(url, {
+    headers: {
+      "APIKey": key
+    }
+  })
+  const data = await res.json()
+  const Adata = data.items
+  // console.log('data--', Adata)
+   return {
+    products: Adata
+  };
+};
 export default Index
