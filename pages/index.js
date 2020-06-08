@@ -1,9 +1,9 @@
 import Products from '../components/Products.js'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
-const Index = (props) => (
+const Index = ({ products}) => (
   <div>
-    <Products products={props.products} />
+    <Products products={products} />
     <Layout />
   </div>
   
