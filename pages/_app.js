@@ -6,17 +6,14 @@ import contextCart from '../components/contextCart';
 export default class MyApp extends App {
 
   state = {
-    cart: [],
-    carttotal: 0
+    cart: []
   }
 
   componentDidMount = () => {
     const cart = JSON.parse(localStorage.getItem('cart'));
-    const carttotal = JSON.parse(localStorage.getItem('total'));
     if (cart) {
       this.setState({
-        cart,
-        carttotal
+        cart
       });
     }
   };
@@ -28,17 +25,10 @@ export default class MyApp extends App {
     localStorage.setItem('cart', JSON.stringify(this.state.cart));
   }
 
-  calculateTotal = (price) => {
-    this.setState({
-      carttotal: this.state.carttotal + price
-    });
-    localStorage.setItem('total', JSON.stringify(this.state.carttotal));
-  }
-
   render() {
     const { Component, pageProps } = this.props
     return (
-      <contextCart.Provider value={{ cart: this.state.cart, addToCart: this.addToCart, total: this.calculateTotal, carttotal: this.state.carttotal }}>
+      <contextCart.Provider value={{ cart: this.state.cart, addToCart: this.addToCart }}>
         <Layout>
           <Component {...pageProps} />
         </Layout>

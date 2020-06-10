@@ -1,6 +1,6 @@
 import Products from '../components/Products.js'
 import fetch from 'isomorphic-unfetch'
-const Index = (props) => (
+const Index = ({products}) => (
   <div>
     <Products products={products} />
   </div>

@@ -3,14 +3,9 @@ import { useContext } from 'react';
 import contextCart from '../components/contextCart';
 
 const Cart = () => {
-  const { cart, carttotal } = useContext(contextCart);
+  const { cart } = useContext(contextCart);
   return (
     <div>
-      <section className="jumbotron text-center">
-        <div className="container">
-          <h2 className="jumbotron-heading">My Carts</h2>
-        </div>
-      </section>
       <div className="pb-5">
         <div className="container">
           <div className="row">
@@ -44,11 +39,6 @@ const Cart = () => {
                   </tbody>
                 </table>
               </div>
-              <ul className="list-unstyled mb-4">
-                <li className="d-flex justify-content-between py-3 border-bottom"><strong className="text-muted">Total</strong>
-                  <h5 className="font-weight-bold">$ {carttotal}</h5>
-                </li>
-              </ul>
               <a href="#" className="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
             </div>
           </div>
